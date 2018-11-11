@@ -127,7 +127,7 @@ router.route('/process/login').post(function(req,res) {
     
 });
 
-router.route('/process/logout').get(function(req, res) {
+router.route('/process/logout').get(function(req, res) { 
         if(req.session.user) {
             req.session.destroy(function(err) {
                 if(err) {
