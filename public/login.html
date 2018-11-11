@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login.html</title>
+</head>
+<body>
+    
+    <h2>로그인 페이지</h2>
+    <form method="post" action="/process/login">
+        <table>
+            <tr>
+                <td>아이디</td>
+                <td><input type="text" name="id"></td>
+            </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td><input type="password" name="password"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="log-in">
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+    <script>
+        var form = document.forms[0];
+        form.onsubmit = function() {
+            event.preventDefault();
+            
+            if(this.id.value == "") {
+                alert('아이디를 입력하세요.');
+                this.id.focus();
+                return;
+                
+            } if(this.password.value == "") {
+                alert('비밀번호를 입력하세요.');
+                this.password.focus();
+                return;
+            }
+            
+            this.submit();
+        }
+    
+    </script>
+    
+</body>
+</html>
